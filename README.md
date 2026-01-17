@@ -63,45 +63,6 @@ MongoDB Atlas (Free Tier)
 - JWT validation
 - Routes requests to backend services
 
----
-
-## 📁 Project Structure
-
-order-management-system/
-│
-├── api-gateway/
-│ ├── src/
-│ ├── Dockerfile
-│ └── pom.xml
-│
-├── user-service/
-│ ├── src/
-│ ├── Dockerfile
-│ └── pom.xml
-│
-├── order-service/
-│ ├── src/
-│ ├── Dockerfile
-│ └── pom.xml
-│
-├── inventory-service/
-│ ├── src/
-│ ├── Dockerfile
-│ └── pom.xml
-│
-├── common/
-│ ├── dto/
-│ ├── exceptions/
-│ └── utils/
-│
-├── .github/workflows/
-│ └── ci-cd.yml
-│
-├── docker-compose.yml
-└── README.md
-
----
-
 ## 🐳 Docker (Local Development)
 
 > `docker-compose` is used **only for local development**.  
