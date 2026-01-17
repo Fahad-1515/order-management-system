@@ -1,0 +1,10 @@
+server:
+  port: ${PORT:8081} # Different from user-service
+
+spring:
+  data:
+    mongodb:
+      uri: ${MONGO_URI} # from Render secrets
+
+jwt:
+  secret: ${JWT_SECRET} # from Render secrets

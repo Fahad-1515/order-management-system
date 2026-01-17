@@ -1,0 +1,49 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    env:
+      MONGO_URI: ${{ secrets.MONGO_URI }}
+      JWT_SECRET: ${{ secrets.JWT_SECRET }}
+
+    strategy:
+      matrix:
+        service: [user-service, order-service, inventory-service, api-gateway]
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Java 17
+        uses: actions/setup-java@v3
+        with:
+          java-version: 17
+          distribution: temurin
+
+      - name: Build ${{ matrix.service }}
+        working-directory: ./${{ matrix.service }}
+        run: ./mvnw clean package -DskipTests || mvn clean package -DskipTests
+
+      - name: Build Docker image ${{ matrix.service }}
+        working-directory: ./${{ matrix.service }}
+        run: |
+          docker build -t ${{ matrix.service }} .
+
+      - name: Log in to Render
+        uses: render-examples/github-action@v1
+        with:
+          api-key: ${{ secrets.RENDER_API_KEY }}
+
+      - name: Deploy ${{ matrix.service }} to Render
+        run: |
+          render deploy service --service-name ${{ matrix.service }} --branch main
