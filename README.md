@@ -1,10 +1,10 @@
-# 🚀 Cloud-Native Order Management System (Microservices)
+# Cloud-Native Order Management System (Microservices)
 
 A **production-ready cloud-native backend system** built using **Spring Boot microservices**, **MongoDB Atlas**, **Docker**, and **JWT authentication**, designed for **free-tier cloud deployment on Render**.
 
 ---
 
-## 🧱 Architecture Overview
+## Architecture Overview
 
 - Monorepo Microservices Architecture
 - API Gateway Pattern
@@ -62,45 +62,6 @@ MongoDB Atlas (Free Tier)
 - Single entry point for all requests
 - JWT validation
 - Routes requests to backend services
-
----
-
-## 📁 Project Structure
-
-order-management-system/
-│
-├── api-gateway/
-│ ├── src/
-│ ├── Dockerfile
-│ └── pom.xml
-│
-├── user-service/
-│ ├── src/
-│ ├── Dockerfile
-│ └── pom.xml
-│
-├── order-service/
-│ ├── src/
-│ ├── Dockerfile
-│ └── pom.xml
-│
-├── inventory-service/
-│ ├── src/
-│ ├── Dockerfile
-│ └── pom.xml
-│
-├── common/
-│ ├── dto/
-│ ├── exceptions/
-│ └── utils/
-│
-├── .github/workflows/
-│ └── ci-cd.yml
-│
-├── docker-compose.yml
-└── README.md
-
----
 
 ## 🐳 Docker (Local Development)
 
