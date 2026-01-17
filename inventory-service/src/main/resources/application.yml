@@ -1,7 +1,10 @@
 server:
-  port: ${PORT:8082} # Different from user/order-service
+  port: 8082
 
 spring:
   data:
     mongodb:
-      uri: ${MONGO_URI} # MongoDB Atlas URI from Render
+      uri: mongodb://localhost:27017/userdb
+
+jwt:
+  secret: local-secret-key
