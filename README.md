@@ -61,7 +61,7 @@ MongoDB Atlas (Free Tier)
 
 - Single entry point for all requests
 - JWT validation
-- Routes requests to backend services
+- Routes requests to backend services.
 
 ## 🐳 Docker (Local Development)
 
