@@ -74,6 +74,6 @@ docker-compose up --build
 #Environment Variables
 PORT=8080
 MONGO_URI=mongodb+srv://<username>:<password>@cluster.mongodb.net/db
-JWT_SECRET=super-secret-key
+JWT_SECRET=super-secret-key.
 
 ```
